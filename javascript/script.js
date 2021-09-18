@@ -95,7 +95,7 @@ document.addEventListener('keydown',function(e){
 });
 
 window.addEventListener('load',function(e){
-    if(car.offsetLeft !== anim[1].offsetLeft && anim[1].offsetTop-2 !== car.offsetTop){
+    /* if(car.offsetLeft !== anim[1].offsetLeft && anim[1].offsetTop-2 !== car.offsetTop){
         anim[1].animate([
             {left:0}
         ],{
@@ -107,7 +107,7 @@ window.addEventListener('load',function(e){
     else{
         alert('yoyoyo')
 
-    }
+    } */
         /* anim[0].animate([
             {left:0}
         ],{
