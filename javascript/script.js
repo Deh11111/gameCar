@@ -104,7 +104,7 @@ window.addEventListener('load',function(e){
             iterations:Infinity
         }) 
     }
-    else{
+    else{ 
         alert('yoyoyo')
 
     } */
