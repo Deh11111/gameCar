@@ -1,0 +1,163 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.road{
+    height: 75px;
+}
+.road--red{
+    background-color: rgb(201, 50, 50);
+}
+.road--blue{
+    background-color: rgba(29, 26, 194, 0.74);
+}
+.road--white{
+    border: 1px solid black;
+    border-top: 0;
+}
+.car{
+    width: 70px;
+    height: 75px;
+    position: absolute;
+    left: 80px;
+    top: 14px;
+    z-index: 1;
+}
+
+.pillar{
+    width: 50px;
+    height: 60px;
+    position: absolute;
+    left: 90%;
+    top: 19px;
+    animation-name:pillar;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2.7s;
+}
+/* .down{
+    animation-name:down;
+    animation-duration:.7s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+}
+
+.doubledown{
+    animation-name:doubledown;
+    animation-duration:.7s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+}
+
+.up{
+    animation-name:up;
+    animation-duration:.7s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+}
+.doubleup{
+    animation-name:doubleup;
+    animation-duration:.7s;
+    animation-timing-function: linear;
+    animation-fill-mode:forwards;
+} */
+.pillar--middle{
+    left: 1200px;
+    top: 41%;
+}
+.pillar--bottom{
+    left:150%;
+    top: 75%;
+}
+
+.right{
+    animation-name:right;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+}
+.left{
+    animation-name:left;
+    animation-duration: 1.5s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes right{
+    100%{
+        left: 100px;
+    }
+}
+
+@keyframes left{
+    0%{
+        left: 100px;
+    }
+    50%{
+        left: 70px;
+    }
+    100%{
+        left: 40px;
+    }
+}
+
+
+/* @keyframes pillar{
+    0%{
+       
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes pillarMidle{
+    0%{
+        left: 1500px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes pillarBottom{
+    0%{
+        left: 2350px;
+    }
+    100%{
+        left: 0;
+    }
+} */
+
+@keyframes down{
+    100%{
+        top: 90px;
+    }
+}
+
+@keyframes doubledown{
+    0%{
+        top: 90px;
+    }
+    100%{
+        top: 166px;
+    }
+}
+
+@keyframes up{
+    0%{
+        top: 166px;
+    }
+    100%{
+        top: 90px;
+    }
+}
+
+@keyframes doubleup{
+    0%{
+        top:90px;
+    }
+    100%{
+        top: 14px;
+    }
+}
