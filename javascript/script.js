@@ -95,7 +95,13 @@ document.addEventListener('keydown',function(e){
 });
 
 window.addEventListener('load',function(e){
-    /* if(car.offsetLeft !== anim[1].offsetLeft && anim[1].offsetTop-2 !== car.offsetTop){
+        anim[0].animate([
+            {left:0}
+        ],{
+            duration: 2500,
+            fill:'forwards',
+            iterations:Infinity
+        }) 
         anim[1].animate([
             {left:0}
         ],{
@@ -103,55 +109,49 @@ window.addEventListener('load',function(e){
             fill:'forwards',
             iterations:Infinity
         }) 
-    }
-    else{ 
-        alert('yoyoyo')
-
-    } */
-        /* anim[0].animate([
-            {left:0}
-        ],{
-            duration: 2500,
-            fill:'forwards',
-            iterations:Infinity
-        }) */
-        /* anim[1].animate([
-            {left:0}
-        ],{
-            duration: 3000,
-            fill:'forwards',
-            iterations:Infinity
-        })  */
-        /* anim[2].animate([
+        anim[2].animate([
             {left:0}
         ],{
             duration: 3200,
             fill:'forwards',
             iterations:Infinity
-        }) */
-        /* anim.forEach(pillar=>{
-            let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
-            let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
-            let pillarLeft = parseInt(window.getComputedStyle(pillar).getPropertyValue('left'))
-            let pillarTop =  parseInt(window.getComputedStyle(pillar).getPropertyValue('top'));
-        }) */
+        })
+        
+        
+            let isAnim=setInterval(function(){
+                for(i=0;i<anim.length;i++){
+                    let pillar = anim[i];
+                    let pillarLeft = parseInt(window.getComputedStyle(pillar).getPropertyValue('left'));
+                    let pillarTop = parseInt(window.getComputedStyle(pillar).getPropertyValue('top'));
+                    let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
+                    let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
+                if((pillarLeft == carLeft+20 && pillarTop-2 == carTop)||(pillarLeft == carLeft+20 && pillarTop-4 == carTop)||(pillarLeft == carLeft+20 && pillarTop-5 == carTop)){
+                    alert('Vse')
+                }
+              }
+            },10)
+            /* for(i=0;i<anim.length;i++){
+                let pillar = anim[i];
+                let pillarLeft = parseInt(window.getComputedStyle(pillar).getPropertyValue('left'));
+                let pillarTop = parseInt(window.getComputedStyle(pillar).getPropertyValue('top'));
+                let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
+                let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
+                setInterval(function(){
+                    if((pillarLeft == carLeft+20 && pillarTop-2 == carTop)||(pillarLeft == carLeft+20 && pillarTop-4 == carTop)||(pillarLeft == carLeft+20 && pillarTop-5 == carTop)){
+                        'ИДИ отсюда'
+                    }
+                },10)
+            } */
 }); 
 
-
+console.log(anim[0].offsetTop);
+console.log(car.offsetTop);
 window.addEventListener('keydown',function(e){
-    if(e.key == '/'){
-        let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
-        let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
-        let pillarLeft = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('left'))
-        let pillarTop = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('top'))
-        console.log('cartop:',carTop)
-        console.log('carleft:',carLeft)
-        console.log('pillartop:',pillarTop)
-        console.log('pillarleft:',pillarLeft)
-        console.log('offsetleft',anim[1].offsetLeft)
-        console.log('caroffset:',car.offsetLeft)
+    if(e.key = "/"){
+        console.log(parseInt(window.getComputedStyle(anim[0]).getPropertyValue('left')));
     }
-});
+})
+
 
 
 let btn = document.querySelector('.btn');
@@ -194,7 +194,7 @@ anim.forEach(ani=>{
             alert('Goddbye')
         }
         console.log('car',car.offsetLeft)
-        console.log('pillar',anim[1].offsetLeft)
+        console.log('pillar',anim[0].offsetLeft)
     })
 })
 
