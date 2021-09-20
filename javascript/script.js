@@ -81,17 +81,6 @@ document.addEventListener('keydown',function(e){
         })
     }  */
      
-
-    /* let carLeft = parseInt(window.getComputedStyle(car).getPropertyPriority('left'));
-    let carTop = parseInt(window.getComputedStyle(car).getPropertyPriority('top'));
-    let pillarLeft =  parseInt(window.getComputedStyle(pillar).getPropertyPriority('left'));
-    let pillarTop =  parseInt(window.getComputedStyle(pillar).getPropertyPriority('top'));
-
-    if(carLeft == pillarLeft && carTop == pillarTop){
-        alert("ПРощай");
-    }
-});
- */
 });
 
 window.addEventListener('load',function(e){
@@ -118,39 +107,56 @@ window.addEventListener('load',function(e){
         })
         
         
-            let isAnim=setInterval(function(){
+            /* let isAnim=setInterval(function(){
                 for(i=0;i<anim.length;i++){
                     let pillar = anim[i];
                     let pillarLeft = parseInt(window.getComputedStyle(pillar).getPropertyValue('left'));
                     let pillarTop = parseInt(window.getComputedStyle(pillar).getPropertyValue('top'));
                     let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
                     let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
-                if((pillarLeft == carLeft+20 && pillarTop-2 == carTop)||(pillarLeft == carLeft+20 && pillarTop-4 == carTop)||(pillarLeft == carLeft+20 && pillarTop-5 == carTop)){
+                if((pillarLeft == carLeft+40 && pillarTop-2 == carTop)||(pillarLeft == carLeft+40 && pillarTop-4 == carTop)||(pillarLeft == carLeft+20 && pillarTop-5 == carTop)){
                     alert('Vse')
                 }
               }
-            },10)
-            /* for(i=0;i<anim.length;i++){
-                let pillar = anim[i];
-                let pillarLeft = parseInt(window.getComputedStyle(pillar).getPropertyValue('left'));
-                let pillarTop = parseInt(window.getComputedStyle(pillar).getPropertyValue('top'));
-                let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
-                let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
-                setInterval(function(){
-                    if((pillarLeft == carLeft+20 && pillarTop-2 == carTop)||(pillarLeft == carLeft+20 && pillarTop-4 == carTop)||(pillarLeft == carLeft+20 && pillarTop-5 == carTop)){
-                        'ИДИ отсюда'
-                    }
-                },10)
-            } */
+            },4) */
+
+        
+
+
+        let isAnim = setInterval(function(){
+            let pillarLeft1 = parseInt(window.getComputedStyle(anim[0]).getPropertyValue('left'));
+            let pillarTop1 = parseInt(window.getComputedStyle(anim[0]).getPropertyValue('top'));
+            let pillarLeft2 = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('left'));
+            let pillarTop2 = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('top'));
+            let pillarLeft3 = parseInt(window.getComputedStyle(anim[2]).getPropertyValue('left'));
+            let pillarTop3 = parseInt(window.getComputedStyle(anim[2]).getPropertyValue('top'));
+            let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
+            let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
+            if((pillarLeft1 == carLeft && pillarTop1-5 == carTop) || (pillarLeft2 == carLeft && pillarTop2-2 == carTop) || (pillarLeft3 == carLeft && pillarTop3-5 == carTop)){
+                alert("Спасибо,что живой");
+                }
+        },4)
+
 }); 
 
-console.log(anim[0].offsetTop);
-console.log(car.offsetTop);
 window.addEventListener('keydown',function(e){
-    if(e.key = "/"){
-        console.log(parseInt(window.getComputedStyle(anim[0]).getPropertyValue('left')));
-    }
-})
+        let pillarLeft1 = parseInt(window.getComputedStyle(anim[0]).getPropertyValue('left'));
+        let pillarTop1 = parseInt(window.getComputedStyle(anim[0]).getPropertyValue('top'));
+        let pillarLeft2 = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('left'));
+        let pillarTop2 = parseInt(window.getComputedStyle(anim[1]).getPropertyValue('top'));
+        let pillarLeft3 = parseInt(window.getComputedStyle(anim[2]).getPropertyValue('left'));
+        let pillarTop3 = parseInt(window.getComputedStyle(anim[2]).getPropertyValue('top'));
+        let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
+        let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
+
+        
+        if(e.key === "/"){
+            console.log('stolbLeft:',pillarLeft3);
+            console.log('stolbTop:',pillarTop3);
+            console.log('carLeft:',carLeft);
+            console.log('carTop:',carTop);
+        }
+});
 
 
 
@@ -178,26 +184,3 @@ btn.addEventListener('click',function(){
         },4);
 });
 
-/* for(let i=0;i<anim.length;i++){
-    anim[i].addEventListener('mouseover',function(){
-        if(car.offsetLeft > anim[1].offsetLeft){
-            alert('Goddbye')
-        }
-        console.log('car',car.offsetLeft)
-        console.log('pillar',anim[1].offsetLeft)
-    })
-} */
-
-anim.forEach(ani=>{
-    ani.addEventListener('mouseover',function(){
-        if(car.offsetLeft > anim[1].offsetLeft){
-            alert('Goddbye')
-        }
-        console.log('car',car.offsetLeft)
-        console.log('pillar',anim[0].offsetLeft)
-    })
-})
-
-if(car.offsetLeft > anim[1].offsetLeft){
-    alert('все')
-}
