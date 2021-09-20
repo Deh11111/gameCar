@@ -132,6 +132,8 @@ window.addEventListener('load',function(e){
             let pillarTop3 = parseInt(window.getComputedStyle(anim[2]).getPropertyValue('top'));
             let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
             let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
+            console.log(pillarLeft1)
+            console.log(pillarTop1)
             if((pillarLeft1 == carLeft && pillarTop1-5 == carTop) || (pillarLeft2 == carLeft && pillarTop2-2 == carTop) || (pillarLeft3 == carLeft && pillarTop3-5 == carTop)){
                 alert("Спасибо,что живой");
                 }
@@ -149,7 +151,7 @@ window.addEventListener('keydown',function(e){
         let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue('left'));
         let carTop = parseInt(window.getComputedStyle(car).getPropertyValue('top'));
 
-        
+
         if(e.key === "/"){
             console.log('stolbLeft:',pillarLeft3);
             console.log('stolbTop:',pillarTop3);
